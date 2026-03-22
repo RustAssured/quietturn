@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questions You're Avoiding — The Quiet Turn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F4EF;
+    --gold: #C9A96E;
+    --gold-light: rgba(201,169,110,0.15);
+    --ink: #1C1917;
+    --ink-mid: #5C5854;
+    --ink-light: #9C9890;
+    --border: rgba(201,169,110,0.25);
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .brand {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .hairline {
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.25rem auto;
+    opacity: 0.6;
+  }
+
+  .intro {
+    font-size: 13px;
+    color: var(--ink-mid);
+    letter-spacing: 0.3px;
+    line-height: 1.7;
+  }
+
+  .card {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .card.fade { opacity: 0; }
+
+  .category {
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 4vw, 26px);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .counter {
+    text-align: center;
+    font-size: 11px;
+    color: var(--ink-light);
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  button {
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 0.5px solid rgba(28,25,23,0.2);
+    background: transparent;
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  button:hover { background: rgba(28,25,23,0.04); }
+
+  button.primary {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  button.primary:hover { background: var(--gold-light); }
+
+  .gate {
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+
+  .gate-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .gate-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .gate-body {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 13px 32px;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .cta:hover { background: var(--gold-light); }
+
+  .footer {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 11px;
+    color: var(--ink-light);
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="brand">The Quiet Turn</div>
+    <div class="title">Questions You're Avoiding</div>
+    <div class="hairline"></div>
+    <div class="intro">Five questions. No pressure.<br>Start anywhere.</div>
+  </div>
+
+  <div class="card" id="card">
+    <div class="category" id="cat"></div>
+    <div class="question" id="q"></div>
+  </div>
+
+  <div class="counter" id="counter"></div>
+
+  <div class="nav" id="nav"></div>
+
+  <div id="gate"></div>
+
+  <div class="footer">Published by The Quiet Turn</div>
+</div>
+
+<script>
+const questions = [
+  { q: "Where do you pretend to be smaller than you are?", cat: "Self Image" },
+  { q: "What decision are you postponing because it might change everything?", cat: "Fear" },
+  { q: "Who deserves a more honest version of you?", cat: "Relationships" },
+  { q: "Are you building something meaningful — or just staying busy?", cat: "Work & Ambition" },
+  { q: "What would future-you wish you had started sooner?", cat: "Time & Regret" }
+];
+
+let idx = 0;
+const card = document.getElementById('card');
+const catEl = document.getElementById('cat');
+const qEl = document.getElementById('q');
+const counterEl = document.getElementById('counter');
+const navEl = document.getElementById('nav');
+const gateEl = document.getElementById('gate');
+
+function render() {
+  card.style.display = 'flex';
+  gateEl.innerHTML = '';
+  catEl.textContent = questions[idx].cat;
+  qEl.textContent = questions[idx].q;
+  counterEl.textContent = 'question ' + (idx + 1) + ' of ' + questions.length;
+  let html = '';
+  if (idx > 0) html += '<button onclick="go(-1)">← prev</button>';
+  if (idx < questions.length - 1) {
+    html += '<button class="primary" onclick="go(1)">next →</button>';
+  } else {
+    html += '<button class="primary" onclick="finish()">see all 60 →</button>';
+  }
+  navEl.innerHTML = html;
+}
+
+function go(dir) {
+  card.classList.add('fade');
+  setTimeout(function() {
+    idx += dir;
+    catEl.textContent = questions[idx].cat;
+    qEl.textContent = questions[idx].q;
+    counterEl.textContent = 'question ' + (idx + 1) + ' of ' + questions.length;
+    let html = '';
+    if (idx > 0) html += '<button onclick="go(-1)">← prev</button>';
+    if (idx < questions.length - 1) {
+      html += '<button class="primary" onclick="go(1)">next →</button>';
+    } else {
+      html += '<button class="primary" onclick="finish()">see all 60 →</button>';
+    }
+    navEl.innerHTML = html;
+    card.classList.remove('fade');
+  }, 200);
+}
+
+function finish() {
+  card.style.display = 'none';
+  counterEl.textContent = '';
+  navEl.innerHTML = '';
+  gateEl.innerHTML = '<div class="gate">'
+    + '<div class="gate-eyebrow">There are 55 more</div>'
+    + '<div class="gate-title">The full set awaits.</div>'
+    + '<div class="gate-body">60 questions across six themes — self image, fear, relationships, work, time &amp; regret, and family.<br><br>For the moments when old answers stop working.</div>'
+    + '<a class="cta" href="https://thequietturn.gumroad.com/l/tigjk" target="_blank">explore the full set &mdash; $29</a>'
+    + '</div>';
+}
+
+render();
+</script>
+
+</body>
+</html>
